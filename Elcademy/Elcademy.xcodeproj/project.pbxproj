@@ -13,6 +13,13 @@
 		B3A7CA3C2BCFC5170049ECFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A7CA3B2BCFC5170049ECFD /* Preview Assets.xcassets */; };
 		B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */; };
 		B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */; };
+		B3A7CA502BCFE3320049ECFD /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA4F2BCFE3320049ECFD /* AppDIContainer.swift */; };
+		B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA512BCFE3720049ECFD /* HomeSceneDIContainer.swift */; };
+		B3A7CA572BCFE4350049ECFD /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA562BCFE4350049ECFD /* HomeFlowCoordinator.swift */; };
+		B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA582BCFE4830049ECFD /* HomeView.swift */; };
+		B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */; };
+		B3A7CA5E2BCFE57D0049ECFD /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA5D2BCFE57D0049ECFD /* AppConfiguration.swift */; };
+		B3A7CA602BCFE6040049ECFD /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA5F2BCFE6040049ECFD /* AppFlowCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +30,13 @@
 		B3A7CA3B2BCFC5170049ECFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		B3A7CA402BCFC5170049ECFD /* Elcademy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elcademy.xcdatamodel; sourceTree = "<group>"; };
+		B3A7CA4F2BCFE3320049ECFD /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
+		B3A7CA512BCFE3720049ECFD /* HomeSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDIContainer.swift; sourceTree = "<group>"; };
+		B3A7CA562BCFE4350049ECFD /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
+		B3A7CA582BCFE4830049ECFD /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailView.swift; sourceTree = "<group>"; };
+		B3A7CA5D2BCFE57D0049ECFD /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
+		B3A7CA5F2BCFE6040049ECFD /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +69,12 @@
 		B3A7CA332BCFC5160049ECFD /* Elcademy */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */,
+				B3A7CA472BCFC5AE0049ECFD /* Application */,
+				B3A7CA4E2BCFE30B0049ECFD /* Domain */,
+				B3A7CA4D2BCFE3050049ECFD /* Data */,
+				B3A7CA4C2BCFE3000049ECFD /* Infrastructure */,
+				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
+				B3A7CA4A2BCFC5C00049ECFD /* Presentation */,
 				B3A7CA362BCFC5160049ECFD /* ContentView.swift */,
 				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
 				B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */,
@@ -71,6 +90,96 @@
 				B3A7CA3B2BCFC5170049ECFD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B3A7CA472BCFC5AE0049ECFD /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA482BCFC5B40049ECFD /* DIContainer */,
+				B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */,
+				B3A7CA5D2BCFE57D0049ECFD /* AppConfiguration.swift */,
+				B3A7CA5F2BCFE6040049ECFD /* AppFlowCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B3A7CA482BCFC5B40049ECFD /* DIContainer */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA4F2BCFE3320049ECFD /* AppDIContainer.swift */,
+				B3A7CA512BCFE3720049ECFD /* HomeSceneDIContainer.swift */,
+			);
+			path = DIContainer;
+			sourceTree = "<group>";
+		};
+		B3A7CA4A2BCFC5C00049ECFD /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA532BCFE3CF0049ECFD /* Home */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B3A7CA4B2BCFE2FA0049ECFD /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		B3A7CA4C2BCFE3000049ECFD /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA5C2BCFE5270049ECFD /* Network */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		B3A7CA4D2BCFE3050049ECFD /* Data */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		B3A7CA4E2BCFE30B0049ECFD /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		B3A7CA532BCFE3CF0049ECFD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA552BCFE41E0049ECFD /* Flows */,
+				B3A7CA542BCFE3FF0049ECFD /* CourseDetail */,
+				B3A7CA582BCFE4830049ECFD /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B3A7CA542BCFE3FF0049ECFD /* CourseDetail */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */,
+			);
+			path = CourseDetail;
+			sourceTree = "<group>";
+		};
+		B3A7CA552BCFE41E0049ECFD /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA562BCFE4350049ECFD /* HomeFlowCoordinator.swift */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		B3A7CA5C2BCFE5270049ECFD /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +252,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3A7CA572BCFE4350049ECFD /* HomeFlowCoordinator.swift in Sources */,
 				B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */,
+				B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */,
 				B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */,
+				B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */,
+				B3A7CA502BCFE3320049ECFD /* AppDIContainer.swift in Sources */,
+				B3A7CA5E2BCFE57D0049ECFD /* AppConfiguration.swift in Sources */,
+				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
 				B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */,
+				B3A7CA602BCFE6040049ECFD /* AppFlowCoordinator.swift in Sources */,
 				B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
