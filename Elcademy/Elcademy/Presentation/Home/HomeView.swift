@@ -13,8 +13,9 @@ struct HomeView: View {
     var body: some View {
         Text("HomeView")
             .task {
-               
                 viewModel.action(.fetchCoursesList)
+                viewModel.action(.fetchCourse)
+                viewModel.action(.fetchLecturesList)
             }
     }
     

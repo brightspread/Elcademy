@@ -15,10 +15,21 @@ final class DataTransferService {
         $0.session.sessionConfiguration.timeoutIntervalForRequest = 30
     }
     
-    typealias GetCoursesList = AnyPublisher<CoursesPage?, NetworkError>
-    func getCoursesList(query: CourseQuery) -> GetCoursesList {
+    typealias GetCoursesList = AnyPublisher<CoursesListResponse?, NetworkError>
+    func getCoursesList(query: CourseListQuery) -> GetCoursesList {
         Self.provider.request(target: ElcademyTarget.getCoursesList(query))
     }
+    
+    typealias GetCourse = AnyPublisher<CourseResponse?, NetworkError>
+    func getCourse(query: CourseQuery) -> GetCourse {
+        Self.provider.request(target: ElcademyTarget.getCourse(query))
+    }
+
+    typealias GetLecturesList = AnyPublisher<LecturesListResponse?, NetworkError>
+    func getLecturesList(query: LectureListQuery) -> GetLecturesList {
+        Self.provider.request(target: ElcademyTarget.getLectureList(query))
+    }
+
 }
 
 enum CoursesList {
@@ -35,9 +46,9 @@ enum ElcademyTarget: ElcademyTargetType {
     static let urlType = URL.Origin.org
     static let org =  URL.Origin.Org.org
     
-    case getCoursesList(CourseQuery)
-    case getCourse
-    case getLectureList
+    case getCoursesList(CourseListQuery)
+    case getCourse(CourseQuery)
+    case getLectureList(LectureListQuery)
 }
 
 extension ElcademyTarget {    
@@ -67,7 +78,12 @@ extension ElcademyTarget {
             case .getCoursesList(let model):
                     .requestParameters(parameters: model.toQuery(), 
                                        encoding: URLEncoding.queryString)
-            default: .requestPlain
+            case .getCourse(let model):
+                    .requestParameters(parameters: model.toQuery(), 
+                                       encoding: URLEncoding.queryString)
+            case .getLectureList(let model):
+                    .requestParameters(parameters: model.toQuery(), 
+                                       encoding: URLEncoding.queryString)
         }
     }
     

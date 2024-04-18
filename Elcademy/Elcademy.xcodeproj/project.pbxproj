@@ -23,8 +23,8 @@
 		B3A7CA6A2BCFE8160049ECFD /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = B3A7CA692BCFE8160049ECFD /* CombineMoya */; };
 		B3A7CA6C2BCFE8160049ECFD /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = B3A7CA6B2BCFE8160049ECFD /* Moya */; };
 		B3A7CA6E2BCFE8860049ECFD /* CoursesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA6D2BCFE8860049ECFD /* CoursesRepositoryProtocol.swift */; };
-		B3A7CA702BCFE9910049ECFD /* CoursesPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA6F2BCFE9910049ECFD /* CoursesPage.swift */; };
-		B3A7CA722BCFEB540049ECFD /* CourseQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA712BCFEB540049ECFD /* CourseQuery.swift */; };
+		B3A7CA702BCFE9910049ECFD /* CoursesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA6F2BCFE9910049ECFD /* CoursesListResponse.swift */; };
+		B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA712BCFEB540049ECFD /* CourseListQuery.swift */; };
 		B3A7CA742BCFEBCD0049ECFD /* CoursesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA732BCFEBCD0049ECFD /* CoursesRepository.swift */; };
 		B3A7CA762BCFEBF10049ECFD /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA752BCFEBF10049ECFD /* DataTransferService.swift */; };
 		B3A7CA792BCFEEF70049ECFD /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = B3A7CA782BCFEEF70049ECFD /* Then */; };
@@ -34,6 +34,10 @@
 		B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA802BD0986F0049ECFD /* HomeUseCase.swift */; };
 		B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA822BD09B6D0049ECFD /* HomeViewModel.swift */; };
 		B3A7CA862BD09B9F0049ECFD /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA852BD09B9F0049ECFD /* ViewModel.swift */; };
+		B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA872BD161BB0049ECFD /* CourseQuery.swift */; };
+		B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA892BD162050049ECFD /* LectureListQuery.swift */; };
+		B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */; };
+		B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +56,8 @@
 		B3A7CA5D2BCFE57D0049ECFD /* AppConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		B3A7CA5F2BCFE6040049ECFD /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
 		B3A7CA6D2BCFE8860049ECFD /* CoursesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRepositoryProtocol.swift; sourceTree = "<group>"; };
-		B3A7CA6F2BCFE9910049ECFD /* CoursesPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesPage.swift; sourceTree = "<group>"; };
-		B3A7CA712BCFEB540049ECFD /* CourseQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseQuery.swift; sourceTree = "<group>"; };
+		B3A7CA6F2BCFE9910049ECFD /* CoursesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesListResponse.swift; sourceTree = "<group>"; };
+		B3A7CA712BCFEB540049ECFD /* CourseListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseListQuery.swift; sourceTree = "<group>"; };
 		B3A7CA732BCFEBCD0049ECFD /* CoursesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesRepository.swift; sourceTree = "<group>"; };
 		B3A7CA752BCFEBF10049ECFD /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
 		B3A7CA7A2BCFF0420049ECFD /* ElcademyTargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyTargetType.swift; sourceTree = "<group>"; };
@@ -62,6 +66,10 @@
 		B3A7CA802BD0986F0049ECFD /* HomeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeUseCase.swift; sourceTree = "<group>"; };
 		B3A7CA822BD09B6D0049ECFD /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B3A7CA852BD09B9F0049ECFD /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		B3A7CA872BD161BB0049ECFD /* CourseQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseQuery.swift; sourceTree = "<group>"; };
+		B3A7CA892BD162050049ECFD /* LectureListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListQuery.swift; sourceTree = "<group>"; };
+		B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesListResponse.swift; sourceTree = "<group>"; };
+		B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,8 +233,12 @@
 		B3A7CA612BCFE7480049ECFD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA6F2BCFE9910049ECFD /* CoursesPage.swift */,
-				B3A7CA712BCFEB540049ECFD /* CourseQuery.swift */,
+				B3A7CA6F2BCFE9910049ECFD /* CoursesListResponse.swift */,
+				B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */,
+				B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */,
+				B3A7CA712BCFEB540049ECFD /* CourseListQuery.swift */,
+				B3A7CA872BD161BB0049ECFD /* CourseQuery.swift */,
+				B3A7CA892BD162050049ECFD /* LectureListQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -368,9 +380,10 @@
 				B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */,
 				B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */,
 				B3A7CA7B2BCFF0420049ECFD /* ElcademyTargetType.swift in Sources */,
-				B3A7CA702BCFE9910049ECFD /* CoursesPage.swift in Sources */,
+				B3A7CA702BCFE9910049ECFD /* CoursesListResponse.swift in Sources */,
 				B3A7CA762BCFEBF10049ECFD /* DataTransferService.swift in Sources */,
 				B3A7CA7F2BCFF8960049ECFD /* MoyaProvider+.swift in Sources */,
+				B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */,
 				B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */,
 				B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */,
 				B3A7CA7D2BCFF1480049ECFD /* Then+.swift in Sources */,
@@ -379,11 +392,14 @@
 				B3A7CA6E2BCFE8860049ECFD /* CoursesRepositoryProtocol.swift in Sources */,
 				B3A7CA5E2BCFE57D0049ECFD /* AppConfiguration.swift in Sources */,
 				B3A7CA862BD09B9F0049ECFD /* ViewModel.swift in Sources */,
+				B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */,
+				B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */,
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
-				B3A7CA722BCFEB540049ECFD /* CourseQuery.swift in Sources */,
+				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
 				B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */,
 				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
 				B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */,
+				B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */,
 				B3A7CA602BCFE6040049ECFD /* AppFlowCoordinator.swift in Sources */,
 				B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */,
 			);

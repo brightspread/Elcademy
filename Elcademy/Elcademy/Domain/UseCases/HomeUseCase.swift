@@ -8,18 +8,28 @@
 import Combine
 
 protocol HomeUseCaseProtocol {
-    func execute(query: CourseQuery) async -> CoursesPage
+    func fetchCourseList(query: CourseListQuery) async -> CoursesListResponse
+    func fetchCourse(query: CourseQuery) async -> CourseResponse
+    func fetchLectureList(query: LectureListQuery) async -> LecturesListResponse
 }
 
-final class HomeUseCase: HomeUseCaseProtocol {
+final class HomeUseCase: HomeUseCaseProtocol {    
     private let coursesRepository: CoursesRepositoryProtocol
 
     init(coursesRepository: CoursesRepositoryProtocol) {
         self.coursesRepository = coursesRepository
     }
     
-    func execute(query: CourseQuery) async -> CoursesPage {
+    func fetchCourseList(query: CourseListQuery) async -> CoursesListResponse {
         await coursesRepository.fetchCoursesList(query: query)
+    }
+    
+    func fetchCourse(query: CourseQuery) async -> CourseResponse {
+        await coursesRepository.fetchCourse(query: query)
+    }
+    
+    func fetchLectureList(query: LectureListQuery) async -> LecturesListResponse {
+        await coursesRepository.fetchLectureList(query: query)
     }
 }
 

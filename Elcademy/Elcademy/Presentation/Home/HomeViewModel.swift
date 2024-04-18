@@ -14,6 +14,8 @@ struct HomeViewState {
 
 enum HomeViewAction {
     case fetchCoursesList
+    case fetchCourse
+    case fetchLecturesList
 }
 
 final class HomeViewModel: ViewModel {
@@ -37,13 +39,34 @@ final class HomeViewModel: ViewModel {
         switch action {
             case .fetchCoursesList: 
                 Task {
-                    await homeUseCase.execute(query: 
+                    let courses = await homeUseCase.fetchCourseList(query: 
                             .init(offset: 10,
                                   count: 10, 
                                   filterIsRecommended: true,
                                   filterIsFree: true,
                                   filterConditions: [])
                     ).courses
+                    
+                    print(courses)
+                }
+            case .fetchCourse:
+                Task {
+                    let course = await homeUseCase.fetchCourse(query: 
+                            .init(courseId: 18817)
+                    ).course
+                    
+                    print(course)
+                }
+            case .fetchLecturesList:
+                Task {
+                    let lectures = await homeUseCase.fetchLectureList(query: 
+                            .init(offset: 0, 
+                                  count: 40,
+                                  courseId: 18817
+                                 )
+                    ).lectures
+                    
+                    print(lectures)
                 }
         }
     }

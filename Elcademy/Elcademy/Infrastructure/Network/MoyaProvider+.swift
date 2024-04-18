@@ -29,7 +29,6 @@ extension MoyaProvider {
             .eraseToAnyPublisher()
             .filterSuccessfulStatusAndRedirectCodes()
             .map(R.self,
-                 atKeyPath: "result",
                  failsOnEmptyData: true)
             .mapToNilable()
             .mapErrorAsNetwork()

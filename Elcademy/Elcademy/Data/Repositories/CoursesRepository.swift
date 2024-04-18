@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class CoursesRepository: CoursesRepositoryProtocol {
+final class CoursesRepository: CoursesRepositoryProtocol {    
     private let dataTransferService: DataTransferService
     private var bag: Set<AnyCancellable> = []
     
@@ -16,10 +16,7 @@ final class CoursesRepository: CoursesRepositoryProtocol {
         self.dataTransferService = dataTransferService
     }
     
-//https://api-rest.elice.io/org/academy/course/list/?filter_is_recommended=true&offset=0&count=10
-//https://api-rest.elice.io/org/academy/course/list/?offset=10
-    
-    func fetchCoursesList(query: CourseQuery) async -> CoursesPage {
+    func fetchCoursesList(query: CourseListQuery) async -> CoursesListResponse {
         await withCheckedContinuation { continuation in
             dataTransferService.getCoursesList(query: query)
                 .tryCompactMap { $0 }
@@ -36,4 +33,44 @@ final class CoursesRepository: CoursesRepositoryProtocol {
                 .store(in: &bag)
         } 
     }
+    
+    func fetchCourse(query: CourseQuery) async -> CourseResponse {
+        await withCheckedContinuation { continuation in
+            dataTransferService.getCourse(query: query)
+                .tryCompactMap { $0 }
+                .sink { 
+                    switch $0 {
+                        case .failure(let error):
+                            print(error)
+                        case .finished:
+                            print("\(#function) is finished")
+                    }
+                } receiveValue: { 
+                    continuation.resume(returning: $0)
+                }
+                .store(in: &bag)
+        } 
+
+    }
+    
+    func fetchLectureList(query: LectureListQuery) async -> LecturesListResponse {
+        await withCheckedContinuation { continuation in
+            dataTransferService.getLecturesList(query: query)
+                .tryCompactMap { $0 }
+                .sink { 
+                    switch $0 {
+                        case .failure(let error):
+                            print(error)
+                        case .finished:
+                            print("\(#function) is finished")
+                    }
+                } receiveValue: { 
+                    continuation.resume(returning: $0)
+                }
+                .store(in: &bag)
+        } 
+
+    }
+    
+    
 }
