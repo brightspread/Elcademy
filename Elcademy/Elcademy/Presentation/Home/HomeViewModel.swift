@@ -47,7 +47,9 @@ final class HomeViewModel: ViewModel {
                                   filterConditions: [])
                     ).courses
                     
-                    print(courses)
+                    courses.forEach {
+                        print("course : \($0.title)")
+                    }
                 }
             case .fetchCourse:
                 Task {
@@ -55,7 +57,7 @@ final class HomeViewModel: ViewModel {
                             .init(courseId: 18817)
                     ).course
                     
-                    print(course)
+//                    print(course)
                 }
             case .fetchLecturesList:
                 Task {
@@ -66,7 +68,9 @@ final class HomeViewModel: ViewModel {
                                  )
                     ).lectures
                     
-                    print(lectures)
+                    lectures.forEach {
+                        print("lecture : \($0.title)")
+                    }
                 }
         }
     }

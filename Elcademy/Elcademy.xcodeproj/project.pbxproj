@@ -38,6 +38,7 @@
 		B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA892BD162050049ECFD /* LectureListQuery.swift */; };
 		B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */; };
 		B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */; };
+		B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		B3A7CA892BD162050049ECFD /* LectureListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListQuery.swift; sourceTree = "<group>"; };
 		B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesListResponse.swift; sourceTree = "<group>"; };
 		B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResponse.swift; sourceTree = "<group>"; };
+		B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		B3A7CA332BCFC5160049ECFD /* Elcademy */ = {
 			isa = PBXGroup;
 			children = (
+				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA472BCFC5AE0049ECFD /* Application */,
 				B3A7CA4E2BCFE30B0049ECFD /* Domain */,
 				B3A7CA4D2BCFE3050049ECFD /* Data */,
@@ -112,9 +115,7 @@
 				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
 				B3A7CA4A2BCFC5C00049ECFD /* Presentation */,
 				B3A7CA362BCFC5160049ECFD /* ContentView.swift */,
-				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
 				B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */,
-				B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */,
 				B3A7CA3A2BCFC5170049ECFD /* Preview Content */,
 			);
 			path = Elcademy;
@@ -196,6 +197,7 @@
 		B3A7CA532BCFE3CF0049ECFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B3A7CA902BD171230049ECFD /* Subviews */,
 				B3A7CA552BCFE41E0049ECFD /* Flows */,
 				B3A7CA542BCFE3FF0049ECFD /* CourseDetail */,
 				B3A7CA582BCFE4830049ECFD /* HomeView.swift */,
@@ -295,6 +297,23 @@
 				B3A7CA852BD09B9F0049ECFD /* ViewModel.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		B3A7CA8F2BD16F130049ECFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
+				B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B3A7CA902BD171230049ECFD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */,
+			);
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,6 +416,7 @@
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
 				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
 				B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */,
+				B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */,
 				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
 				B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */,
 				B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */,
