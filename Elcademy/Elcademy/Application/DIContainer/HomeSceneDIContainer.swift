@@ -10,7 +10,7 @@ import SwiftUI
 final class HomeSceneDIContainer: HomeFlowCoordinatorDependencies {
 
     struct Dependencies {
-//        let apiDataTransferService: DataTransferService
+        let apiDataTransferService: DataTransferService
     }
     
     private let dependencies: Dependencies
@@ -19,8 +19,21 @@ final class HomeSceneDIContainer: HomeFlowCoordinatorDependencies {
         self.dependencies = dependencies
     }
     
+    func makeHomeUseCase() -> HomeUseCaseProtocol {
+        HomeUseCase(coursesRepository: makeCoursesRepository())
+    }
+    
+    func makeCoursesRepository() -> CoursesRepository {
+        CoursesRepository(dataTransferService: dependencies.apiDataTransferService)
+    }
+    
     func makeHomeView() -> HomeView {
-        HomeView()
+        HomeView(
+            viewModel: .init(
+                homeUseCase: self.makeHomeUseCase(), 
+                state: .init()
+            )
+        )
     }
     
     func makeCourseDetailView() -> CourseDetailView {

@@ -9,6 +9,6 @@ import Foundation
 
 final class AppConfiguration {
     lazy var apiBaseURL: String = {
-        return "https://api-rest.elice.io/org/academy/"
+        return "https://api-rest.elice.io/org/"
     }()
 }

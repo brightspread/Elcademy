@@ -10,17 +10,11 @@ import Foundation
 final class AppDIContainer {
     lazy var appConfiguration = AppConfiguration()
     
-//    lazy var apiDataTranserferService: DataTransferService = {
-//        let config = ApiDataNetworkConfig(
-//            baseURL: URL(string: appConfiguration.apiBaseURL)!
-//        )
-//        let apiDataNetwork = DefaultNetworkService(config: config)
-//        return DefaultDataTransferService(networkService: apiDataNetwork)
-//    }()
+    let apiDataTranserferService = DataTransferService()
     
     func makeHomeSceneDIConatiner() -> HomeSceneDIContainer {
         let dependencies = HomeSceneDIContainer.Dependencies(
-//            apiDataTransferService: apiDataTranserferService
+            apiDataTransferService: apiDataTranserferService
         )
         return HomeSceneDIContainer(dependencies: dependencies)
     }
