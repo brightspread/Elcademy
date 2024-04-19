@@ -9,9 +9,6 @@ import SwiftUI
 import Combine
 
 struct HomeViewState {
-    fileprivate(set) var coursesList: [CoursePreview] = []
-    fileprivate(set) var coursesOffsetDic: [Int : [CoursePreview]] = [:]
-    
     fileprivate(set) var freeCourses: [CoursePreview] = []
     fileprivate(set) var freeCoursesDic: [Int : [CoursePreview]] = [:]
 
@@ -19,13 +16,14 @@ struct HomeViewState {
     fileprivate(set) var recommendedCoursesDic: [Int : [CoursePreview]] = [:]
     
     fileprivate(set) var coursesDic: [Int : Course] = [:]
+    fileprivate(set) var lecturesDic: [Int : [Lecture]] = [:]
 }
 
 enum HomeViewAction {
     case fetchFreeCoursesList(Int)
     case fetchRecommendedCoursesList(Int)
     case fetchCourse(Int)
-    case fetchLecturesList
+    case fetchLecturesList(Int)
 }
 
 final class HomeViewModel: ViewModel {
@@ -43,9 +41,6 @@ final class HomeViewModel: ViewModel {
          state: HomeViewState) {
         self.homeUseCase = homeUseCase
         self.state = state
-        
-        action(.fetchFreeCoursesList(0))
-        action(.fetchRecommendedCoursesList(0))
     }
     
     fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
@@ -61,6 +56,7 @@ final class HomeViewModel: ViewModel {
     private func buildCoursesDic(from courses: [CoursePreview]) {
         courses.forEach { [weak self] in
             self?.action(.fetchCourse($0.id))
+            self?.action(.fetchLecturesList($0.id))
         }
     }
     
@@ -111,20 +107,22 @@ final class HomeViewModel: ViewModel {
                         }
                     }
                 }
-            case .fetchLecturesList:
+            case .fetchLecturesList(let id):
                 Task {
                     let lectures = await homeUseCase.fetchLectureList(query: 
                             .init(offset: 0, 
                                   count: 10,
-                                  courseId: 18817
+                                  courseId: id
                                  )
                     ).lectures
                     
-                    lectures.forEach {
-                        print("lecture : \($0.title)")
+                    Task { @MainActor [weak self] in 
+                        guard let self = self else { return }
+                        if state.lecturesDic[id] == nil {
+                            state.lecturesDic[id] = lectures
+                        }
                     }
                 }
-                
         }
     }
     

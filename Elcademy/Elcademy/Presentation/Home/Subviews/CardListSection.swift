@@ -16,6 +16,7 @@ struct CardListSection: View {
     let courses: [CoursePreview]
     let moreCardAction: (Int) -> Void
     let courseDetails: [Int : Course]
+    let lectures: [Int : [Lecture]]
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -28,7 +29,8 @@ struct CardListSection: View {
                     ForEach(courses, id: \.self) { course in
                         NavigationLink {
                             if let courseDetail = courseDetails[course.id] {
-                                CourseDetailView(course: courseDetail)
+                                CourseDetailView(course: courseDetail, 
+                                                 lectures: lectures[course.id])
                             }
                         } label: {
                             Card(course: course)

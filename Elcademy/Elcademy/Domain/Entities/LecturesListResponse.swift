@@ -21,7 +21,7 @@ struct LecturesListResponse: Codable {
 }
 
 // MARK: - Lecture
-struct Lecture: Codable {
+struct Lecture: Codable, Hashable {
     let id: Int
     let title, description: String
 

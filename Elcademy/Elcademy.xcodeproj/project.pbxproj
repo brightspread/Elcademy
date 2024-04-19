@@ -12,6 +12,9 @@
 		B38A8E302BD2024100C7A776 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2F2BD2024100C7A776 /* Card.swift */; };
 		B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */; };
 		B38A8E352BD2436F00C7A776 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B38A8E342BD2436F00C7A776 /* MarkdownUI */; };
+		B38A8E392BD2458A00C7A776 /* CourseTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */; };
+		B38A8E3B2BD245DE00C7A776 /* CourseDescriptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */; };
+		B38A8E3D2BD24BDB00C7A776 /* CourseLecturesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */; };
 		B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */; };
 		B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA362BCFC5160049ECFD /* ContentView.swift */; };
 		B3A7CA392BCFC5170049ECFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A7CA382BCFC5170049ECFD /* Assets.xcassets */; };
@@ -51,6 +54,9 @@
 		B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSection.swift; sourceTree = "<group>"; };
 		B38A8E2F2BD2024100C7A776 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
+		B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTopSection.swift; sourceTree = "<group>"; };
+		B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDescriptionSection.swift; sourceTree = "<group>"; };
+		B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLecturesSection.swift; sourceTree = "<group>"; };
 		B3A7CA312BCFC5160049ECFD /* Elcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyApp.swift; sourceTree = "<group>"; };
 		B3A7CA362BCFC5160049ECFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -98,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B38A8E362BD2455F00C7A776 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */,
+				B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */,
+				B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 		B3A7CA282BCFC5160049ECFD = {
 			isa = PBXGroup;
 			children = (
@@ -162,8 +178,9 @@
 		B3A7CA4A2BCFC5C00049ECFD /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA842BD09B880049ECFD /* Utils */,
 				B3A7CA532BCFE3CF0049ECFD /* Home */,
+				B3A7CA542BCFE3FF0049ECFD /* CourseDetail */,
+				B3A7CA842BD09B880049ECFD /* Utils */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -210,7 +227,6 @@
 			children = (
 				B3A7CA902BD171230049ECFD /* Subviews */,
 				B3A7CA552BCFE41E0049ECFD /* Flows */,
-				B3A7CA542BCFE3FF0049ECFD /* CourseDetail */,
 				B3A7CA582BCFE4830049ECFD /* HomeView.swift */,
 				B3A7CA822BD09B6D0049ECFD /* HomeViewModel.swift */,
 			);
@@ -220,6 +236,7 @@
 		B3A7CA542BCFE3FF0049ECFD /* CourseDetail */ = {
 			isa = PBXGroup;
 			children = (
+				B38A8E362BD2455F00C7A776 /* Subviews */,
 				B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */,
 				B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */,
 			);
@@ -415,12 +432,14 @@
 				B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */,
 				B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */,
 				B3A7CA7B2BCFF0420049ECFD /* ElcademyTargetType.swift in Sources */,
+				B38A8E3B2BD245DE00C7A776 /* CourseDescriptionSection.swift in Sources */,
 				B3A7CA702BCFE9910049ECFD /* CoursesListResponse.swift in Sources */,
 				B3A7CA762BCFEBF10049ECFD /* DataTransferService.swift in Sources */,
 				B3A7CA7F2BCFF8960049ECFD /* MoyaProvider+.swift in Sources */,
 				B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */,
 				B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */,
 				B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */,
+				B38A8E392BD2458A00C7A776 /* CourseTopSection.swift in Sources */,
 				B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */,
 				B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */,
 				B3A7CA7D2BCFF1480049ECFD /* Then+.swift in Sources */,
@@ -434,6 +453,7 @@
 				B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */,
 				B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */,
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
+				B38A8E3D2BD24BDB00C7A776 /* CourseLecturesSection.swift in Sources */,
 				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
 				B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */,
 				B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */,
