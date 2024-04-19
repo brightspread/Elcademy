@@ -22,6 +22,7 @@
 
 ## Solutions for the project
 - **Clean architecture** for readability and maintainability
+- To avoid developer mistakes, I implemented an **Unidirectional data flow** by binding ViewModel's state.
 - To keep the View code clean, I extracted most of the elements to the **Subview**.
 - I split it into main and feat branches and used squash merges.
 
