@@ -5,6 +5,7 @@
 - About this project
 - Requirements
 - Concept
+- Architecture
 - Dependencies
 
 ## About the project
