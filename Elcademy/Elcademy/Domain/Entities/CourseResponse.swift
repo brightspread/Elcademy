@@ -19,8 +19,9 @@ struct CourseResponse: Codable {
 
 struct Course: Codable {
     let id: Int
-    let title, code, description: String
-    let imageFileURL, logoFileURL: String
+    let title, code: String
+    let description: String?
+    let imageFileURL, logoFileURL: String?
     let isFree: Bool
 
     enum CodingKeys: String, CodingKey {
