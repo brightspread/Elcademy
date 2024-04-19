@@ -17,6 +17,9 @@ struct HomeViewState {
     
     fileprivate(set) var coursesDic: [Int : Course] = [:]
     fileprivate(set) var lecturesDic: [Int : [Lecture]] = [:]
+    
+    fileprivate(set) var registeredCourseIds: Set<Int> = []
+    fileprivate(set) var registeredCourses: [CoursePreview] = []
 }
 
 enum HomeViewAction {
@@ -24,26 +27,24 @@ enum HomeViewAction {
     case fetchRecommendedCoursesList(Int)
     case fetchCourse(Int)
     case fetchLecturesList(Int)
+    case registerCourse(Int)
 }
 
 final class HomeViewModel: ViewModel {
     private let homeUseCase: HomeUseCaseProtocol
     
-    @Published var state: HomeViewState
+    @Published fileprivate(set) var state: HomeViewState
+    @AppStorage("registeredCourses") fileprivate(set) var registeredCourses: [CoursePreview] = []
     
-    private var coursesLoadTask: Cancellable? {
-        willSet {
-            coursesLoadTask?.cancel()
-        }
-    }
+    let makeCourseDetailView: CourseDetailViewType
     
     init(homeUseCase: HomeUseCaseProtocol,
-         state: HomeViewState) {
+         state: HomeViewState,
+         makeCourseDetailView: @escaping CourseDetailViewType
+    ) {
         self.homeUseCase = homeUseCase
         self.state = state
-        
-        action(.fetchFreeCoursesList(0))
-        action(.fetchRecommendedCoursesList(0))
+        self.makeCourseDetailView = makeCourseDetailView
     }
     
     fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
@@ -101,7 +102,8 @@ final class HomeViewModel: ViewModel {
                 }
             case .fetchCourse(let id):
                 Task {
-                    let course = await homeUseCase.fetchCourse(query: 
+                    let course = await homeUseCase.fetchCourse(
+                        query: 
                             .init(courseId: id)
                     ).course
                     
@@ -128,6 +130,19 @@ final class HomeViewModel: ViewModel {
                         }
                     }
                 }                
+            case .registerCourse(let id):
+                if registeredCourses.contains(where: { $0.id == id }) {
+                    registeredCourses.removeAll { 
+                        $0.id == id
+                    }
+                } else {
+                    let course = (state.freeCourses + state.recommendedCourses)
+                        .filter { $0.id == id }
+                        .first
+                    if let course {
+                        registeredCourses.append(course)
+                    } 
+                }
         }
     }
     

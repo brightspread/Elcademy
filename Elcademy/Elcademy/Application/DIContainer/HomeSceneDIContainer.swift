@@ -31,12 +31,17 @@ final class HomeSceneDIContainer: HomeFlowCoordinatorDependencies {
         HomeView(
             viewModel: .init(
                 homeUseCase: self.makeHomeUseCase(), 
-                state: .init()
+                state: .init(),
+                makeCourseDetailView: self.makeCourseDetailView
             )
         )
     }
     
-    func makeCourseDetailView(course: Course, lectures: [Lecture]) -> CourseDetailView {
-        CourseDetailView(course: course, lectures: lectures)
+    func makeCourseDetailView(course: Course, 
+                              lectures: [Lecture]?,
+                              registerAction: @escaping () -> ()) -> CourseDetailView {
+        CourseDetailView(course: course,
+                         lectures: lectures, 
+                         registerAction: registerAction)
     }
 }

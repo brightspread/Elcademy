@@ -19,27 +19,44 @@ struct HomeView: View {
                     CardListSection(
                         sectionTitle: "무료 과목", 
                         courses: viewModel.state.freeCourses,
+                        courseDetails: viewModel.state.coursesDic, 
+                        lectures: viewModel.state.lecturesDic,
                         moreCardAction: {
                             viewModel.action(.fetchFreeCoursesList($0))
                         },
-                        courseDetails: viewModel.state.coursesDic, 
-                        lectures: viewModel.state.lecturesDic
+                        registerAction: {
+                            viewModel.action(.registerCourse($0))
+                        }, 
+                        makeCourseDetailView: viewModel.makeCourseDetailView
                     )
                     
                     CardListSection(
                         sectionTitle: "추천 과목", 
                         courses: viewModel.state.recommendedCourses,
+                        courseDetails: viewModel.state.coursesDic,
+                        lectures: viewModel.state.lecturesDic,
                         moreCardAction: {
                             viewModel.action(.fetchRecommendedCoursesList($0))
                         },
-                        courseDetails: viewModel.state.coursesDic,
-                        lectures: viewModel.state.lecturesDic
+                        registerAction: {
+                            viewModel.action(.registerCourse($0))
+                        },
+                        makeCourseDetailView: viewModel.makeCourseDetailView
                     )
-
-                    // MyLecturesSection
-    //                CardCourseSection(sectionTitle: "무료 과목", 
-    //                                  moreCardAction: { viewModel.action(.fetchCoursesList($0) ) },
-    //                                  courses: viewModel.state.coursesList)
+                    
+                    
+                    CardListSection(
+                        sectionTitle: "내 학습", 
+                        courses: viewModel.registeredCourses,
+                        courseDetails: viewModel.state.coursesDic,
+                        lectures: viewModel.state.lecturesDic, 
+                        moreCardAction: nil,
+                        registerAction: {
+                            viewModel.action(.registerCourse($0))
+                        },
+                        makeCourseDetailView: viewModel.makeCourseDetailView
+                        
+                    )                
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }

@@ -11,8 +11,10 @@ import MarkdownUI
 struct CourseDetailView: View {
     let course: Course
     let lectures: [Lecture]?
+    let registerAction: () -> ()
     
     @Environment(\.dismiss) var dismiss
+    @AppStorage("registeredCourses") private var registeredCourses: [CoursePreview] = []
     
     var body: some View {
         ScrollView(.vertical) {
@@ -60,15 +62,19 @@ fileprivate extension CourseDetailView {
     
     @ViewBuilder
     var lectureActionButton: some View {
+        let isRegistered = registeredCourses.contains {
+            $0.id == course.id
+        }
         Button {
-            
+            registerAction()
+            dismiss()
         } label: {
-            Text("수강 신청")
+            Text(isRegistered ? "수강 취소" : "수강 신청")
                 .font(.system(size: 16).bold())
                 .foregroundStyle(.white)
                 .frame(maxWidth: .infinity)
                 .frame(height: 48)
-                .background(Color(hexString: "5A2ECC")) // F44336
+                .background(isRegistered ? Color(hexString: "F44336") : Color(hexString: "5A2ECC"))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal, 16)
         }
@@ -85,7 +91,6 @@ fileprivate extension CourseDetailView {
             }
         }
     }
-
 }
 //
 //#Preview {
