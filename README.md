@@ -17,12 +17,13 @@
 
 |List|Details|Enrollment|
 |------|---|---|
-|![Simulator Screenshot - iPhone 15 - 2024-04-19 at 20 57 02](https://github.com/brightspread/Elcademy/assets/59555700/5c472032-7484-4975-8428-cc33ebc4ca59)|![Simulator Screenshot - iPhone 15 - 2024-04-19 at 20 57 08](https://github.com/brightspread/Elcademy/assets/59555700/c32fca4e-eeb9-4599-824e-dd9d1475b6ee)|![Simulator Screenshot - iPhone 15 - 2024-04-19 at 20 57 21](https://github.com/brightspread/Elcademy/assets/59555700/74de8a8d-2e48-42b4-b792-c31afd871620)|
+|![Simulator Screen Recording - iPhone 15 - 2024-04-19 at 21 07 27](https://github.com/brightspread/Elcademy/assets/59555700/c220cf84-0c22-4ced-b14b-d2e242987276)|![Simulator Screen Recording - iPhone 15 - 2024-04-19 at 21 07 53](https://github.com/brightspread/Elcademy/assets/59555700/44d88c1c-e77e-420f-b0a7-787aa5b24687)|![Simulator Screen Recording - iPhone 15 - 2024-04-19 at 21 08 24](https://github.com/brightspread/Elcademy/assets/59555700/42991583-ec53-47af-9d63-4c18ff5b0d21)|
 
 ## Solutions for the project
 - **Clean architecture** for readability and maintainability
 - To keep the View code clean, I extracted most of the elements to the **Subview**.
 - I split it into main and feat branches and used squash merges.
+
 
 ### Dependencies
 - Combine
