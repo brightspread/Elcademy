@@ -18,6 +18,19 @@ struct CourseListQuery: Equatable {
         
         var query: [String: Any] = [:]
         
+        
+        if let filterIsRecommended {
+            query.updateValue(filterIsRecommended ? "true" : "false", forKey: "filter_is_recommended")
+        }
+        
+        if let filterIsFree {
+            query.updateValue(filterIsFree ? "true" : "false", forKey: "filter_is_free")
+        }     
+        
+        if let filterConditions, !filterConditions.isEmpty {
+            query.updateValue(filterConditions, forKey: "filter_conditions")
+        }            
+        
         if let offset {
             query.updateValue(offset, forKey: "offset")
         }
@@ -25,18 +38,7 @@ struct CourseListQuery: Equatable {
         if let count {
             query.updateValue(count, forKey: "count")
         }
-        
-        if let filterIsRecommended {
-            query.updateValue(filterIsRecommended, forKey: "filter_is_recommended")
-        }
-        
-        if let filterIsFree {
-            query.updateValue(filterIsFree, forKey: "offilter_is_freefset")
-        }     
-        
-        if let filterConditions, !filterConditions.isEmpty {
-            query.updateValue(filterConditions, forKey: "filter_conditions")
-        }            
+
         return query
     }
 }
