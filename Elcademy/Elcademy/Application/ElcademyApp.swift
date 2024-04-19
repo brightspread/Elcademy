@@ -11,7 +11,6 @@ import SwiftUI
 struct ElcademyApp: App {
     let appDIContainer = AppDIContainer()
     var appFlowCoordinator: AppFlowCoordinator?
-    let persistenceController = PersistenceController.shared
     
     init() {
         appFlowCoordinator = AppFlowCoordinator(appDIContainer: appDIContainer)

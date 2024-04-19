@@ -7,20 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B36423D92BD25AD8001F7DF0 /* ElcademyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423D82BD25AD8001F7DF0 /* ElcademyTarget.swift */; };
+		B36423DB2BD25AEB001F7DF0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */; };
+		B36423DD2BD2630D001F7DF0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423DC2BD2630D001F7DF0 /* Array+.swift */; };
 		B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */; };
 		B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */; };
 		B38A8E302BD2024100C7A776 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2F2BD2024100C7A776 /* Card.swift */; };
-		B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */; };
 		B38A8E352BD2436F00C7A776 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B38A8E342BD2436F00C7A776 /* MarkdownUI */; };
 		B38A8E392BD2458A00C7A776 /* CourseTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */; };
 		B38A8E3B2BD245DE00C7A776 /* CourseDescriptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */; };
 		B38A8E3D2BD24BDB00C7A776 /* CourseLecturesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */; };
 		B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */; };
-		B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA362BCFC5160049ECFD /* ContentView.swift */; };
 		B3A7CA392BCFC5170049ECFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A7CA382BCFC5170049ECFD /* Assets.xcassets */; };
 		B3A7CA3C2BCFC5170049ECFD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A7CA3B2BCFC5170049ECFD /* Preview Assets.xcassets */; };
-		B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */; };
-		B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */; };
 		B3A7CA502BCFE3320049ECFD /* AppDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA4F2BCFE3320049ECFD /* AppDIContainer.swift */; };
 		B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA512BCFE3720049ECFD /* HomeSceneDIContainer.swift */; };
 		B3A7CA572BCFE4350049ECFD /* HomeFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA562BCFE4350049ECFD /* HomeFlowCoordinator.swift */; };
@@ -50,20 +49,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B36423D82BD25AD8001F7DF0 /* ElcademyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyTarget.swift; sourceTree = "<group>"; };
+		B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		B36423DC2BD2630D001F7DF0 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 		B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSection.swift; sourceTree = "<group>"; };
 		B38A8E2F2BD2024100C7A776 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTopSection.swift; sourceTree = "<group>"; };
 		B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDescriptionSection.swift; sourceTree = "<group>"; };
 		B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLecturesSection.swift; sourceTree = "<group>"; };
 		B3A7CA312BCFC5160049ECFD /* Elcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyApp.swift; sourceTree = "<group>"; };
-		B3A7CA362BCFC5160049ECFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B3A7CA382BCFC5170049ECFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B3A7CA3B2BCFC5170049ECFD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		B3A7CA402BCFC5170049ECFD /* Elcademy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Elcademy.xcdatamodel; sourceTree = "<group>"; };
 		B3A7CA4F2BCFE3320049ECFD /* AppDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDIContainer.swift; sourceTree = "<group>"; };
 		B3A7CA512BCFE3720049ECFD /* HomeSceneDIContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSceneDIContainer.swift; sourceTree = "<group>"; };
 		B3A7CA562BCFE4350049ECFD /* HomeFlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFlowCoordinator.swift; sourceTree = "<group>"; };
@@ -133,15 +131,13 @@
 		B3A7CA332BCFC5160049ECFD /* Elcademy */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA472BCFC5AE0049ECFD /* Application */,
 				B3A7CA4E2BCFE30B0049ECFD /* Domain */,
 				B3A7CA4D2BCFE3050049ECFD /* Data */,
 				B3A7CA4C2BCFE3000049ECFD /* Infrastructure */,
-				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
 				B3A7CA4A2BCFC5C00049ECFD /* Presentation */,
-				B3A7CA362BCFC5160049ECFD /* ContentView.swift */,
-				B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */,
+				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
+				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA3A2BCFC5170049ECFD /* Preview Content */,
 			);
 			path = Elcademy;
@@ -190,6 +186,7 @@
 			children = (
 				B3A7CA7C2BCFF1480049ECFD /* Then+.swift */,
 				B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */,
+				B36423DC2BD2630D001F7DF0 /* Array+.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -206,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA652BCFE7830049ECFD /* Repositories */,
-				B3A7CA672BCFE7940049ECFD /* PersistentStorages */,
 				B3A7CA662BCFE78C0049ECFD /* Network */,
 			);
 			path = Data;
@@ -238,7 +234,6 @@
 			children = (
 				B38A8E362BD2455F00C7A776 /* Subviews */,
 				B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */,
-				B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */,
 			);
 			path = CourseDetail;
 			sourceTree = "<group>";
@@ -255,7 +250,6 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA752BCFEBF10049ECFD /* DataTransferService.swift */,
-				B3A7CA7A2BCFF0420049ECFD /* ElcademyTargetType.swift */,
 				B3A7CA7E2BCFF8960049ECFD /* MoyaProvider+.swift */,
 			);
 			path = Network;
@@ -309,15 +303,11 @@
 		B3A7CA662BCFE78C0049ECFD /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				B36423D82BD25AD8001F7DF0 /* ElcademyTarget.swift */,
+				B3A7CA7A2BCFF0420049ECFD /* ElcademyTargetType.swift */,
+				B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		B3A7CA672BCFE7940049ECFD /* PersistentStorages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
 		B3A7CA842BD09B880049ECFD /* Utils */ = {
@@ -332,7 +322,6 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
-				B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -429,7 +418,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3A7CA572BCFE4350049ECFD /* HomeFlowCoordinator.swift in Sources */,
-				B3A7CA3E2BCFC5170049ECFD /* Persistence.swift in Sources */,
 				B3A7CA522BCFE3720049ECFD /* HomeSceneDIContainer.swift in Sources */,
 				B3A7CA7B2BCFF0420049ECFD /* ElcademyTargetType.swift in Sources */,
 				B38A8E3B2BD245DE00C7A776 /* CourseDescriptionSection.swift in Sources */,
@@ -437,11 +425,12 @@
 				B3A7CA762BCFEBF10049ECFD /* DataTransferService.swift in Sources */,
 				B3A7CA7F2BCFF8960049ECFD /* MoyaProvider+.swift in Sources */,
 				B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */,
-				B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */,
 				B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */,
+				B36423DB2BD25AEB001F7DF0 /* NetworkError.swift in Sources */,
 				B38A8E392BD2458A00C7A776 /* CourseTopSection.swift in Sources */,
 				B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */,
 				B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */,
+				B36423DD2BD2630D001F7DF0 /* Array+.swift in Sources */,
 				B3A7CA7D2BCFF1480049ECFD /* Then+.swift in Sources */,
 				B38A8E302BD2024100C7A776 /* Card.swift in Sources */,
 				B3A7CA742BCFEBCD0049ECFD /* CoursesRepository.swift in Sources */,
@@ -451,14 +440,13 @@
 				B3A7CA862BD09B9F0049ECFD /* ViewModel.swift in Sources */,
 				B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */,
 				B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */,
-				B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */,
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
 				B38A8E3D2BD24BDB00C7A776 /* CourseLecturesSection.swift in Sources */,
 				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
 				B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */,
+				B36423D92BD25AD8001F7DF0 /* ElcademyTarget.swift in Sources */,
 				B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */,
 				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
-				B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */,
 				B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */,
 				B3A7CA602BCFE6040049ECFD /* AppFlowCoordinator.swift in Sources */,
 				B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */,
@@ -717,19 +705,6 @@
 			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B3A7CA402BCFC5170049ECFD /* Elcademy.xcdatamodel */,
-			);
-			currentVersion = B3A7CA402BCFC5170049ECFD /* Elcademy.xcdatamodel */;
-			path = Elcademy.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B3A7CA292BCFC5160049ECFD /* Project object */;
 }

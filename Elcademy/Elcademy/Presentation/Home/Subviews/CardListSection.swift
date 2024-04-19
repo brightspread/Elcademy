@@ -14,10 +14,14 @@ struct CardListSection: View {
     @State private var scrollIndex: Int = 0
     
     let courses: [CoursePreview]
-    let moreCardAction: (Int) -> Void
     let courseDetails: [Int : Course]
     let lectures: [Int : [Lecture]]
-
+    let moreCardAction: ((Int) -> Void)?
+    let registerAction: (Int) -> ()
+    let makeCourseDetailView: CourseDetailViewType
+    
+    private let INDEX_MORE_CARD_ACTION = 3
+    
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(sectionTitle)
@@ -29,8 +33,12 @@ struct CardListSection: View {
                     ForEach(courses, id: \.self) { course in
                         NavigationLink {
                             if let courseDetail = courseDetails[course.id] {
-                                CourseDetailView(course: courseDetail, 
-                                                 lectures: lectures[course.id])
+                                makeCourseDetailView(
+                                    courseDetail,
+                                    lectures[course.id]
+                                ) { 
+                                    registerAction(course.id)
+                                }
                             }
                         } label: {
                             Card(course: course)
@@ -46,8 +54,9 @@ struct CardListSection: View {
                     scrollPosition = value
                     scrollIndex = Int((abs(value.x) + 100) / 200)
                     
-                    if scrollIndex == courses.count - 3, !courses.isEmpty {
-                        moreCardAction(scrollIndex + 3)
+                    if scrollIndex == courses.count - INDEX_MORE_CARD_ACTION,
+                       !courses.isEmpty {
+                        moreCardAction?(scrollIndex + INDEX_MORE_CARD_ACTION)
                     }
                 }
 

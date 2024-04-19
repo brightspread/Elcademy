@@ -14,7 +14,7 @@ struct CourseTopSection: View {
     
     var body: some View {
         Group {
-            if let imageFileURL {
+            if imageFileURL != nil {
                 HStack(alignment:.center, spacing: 8) {
                     smallLogo
                     

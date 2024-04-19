@@ -17,6 +17,9 @@ struct HomeViewState {
     
     fileprivate(set) var coursesDic: [Int : Course] = [:]
     fileprivate(set) var lecturesDic: [Int : [Lecture]] = [:]
+    
+    fileprivate(set) var registeredCourseIds: Set<Int> = []
+    fileprivate(set) var registeredCourses: [CoursePreview] = []
 }
 
 enum HomeViewAction {
@@ -24,32 +27,32 @@ enum HomeViewAction {
     case fetchRecommendedCoursesList(Int)
     case fetchCourse(Int)
     case fetchLecturesList(Int)
+    case registerCourse(Int)
 }
 
 final class HomeViewModel: ViewModel {
     private let homeUseCase: HomeUseCaseProtocol
     
-    @Published var state: HomeViewState
+    @Published fileprivate(set) var state: HomeViewState
+    @AppStorage("registeredCourses") fileprivate(set) var registeredCourses: [CoursePreview] = []
     
-    private var coursesLoadTask: Cancellable? {
-        willSet {
-            coursesLoadTask?.cancel()
-        }
-    }
+    let makeCourseDetailView: CourseDetailViewType
+    
+    private let FETCH_COUNT_PER_CALL = 10
     
     init(homeUseCase: HomeUseCaseProtocol,
-         state: HomeViewState) {
+         state: HomeViewState,
+         makeCourseDetailView: @escaping CourseDetailViewType
+    ) {
         self.homeUseCase = homeUseCase
         self.state = state
-        
-        action(.fetchFreeCoursesList(0))
-        action(.fetchRecommendedCoursesList(0))
+        self.makeCourseDetailView = makeCourseDetailView
     }
     
     fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
         var list: [CoursePreview] = []
         for i in 0..<dic.count {
-            if let courses = dic[i * 10] {
+            if let courses = dic[i * FETCH_COUNT_PER_CALL] {
                 list.append(contentsOf: courses)
             }
         }
@@ -57,9 +60,19 @@ final class HomeViewModel: ViewModel {
     }
     
     private func buildCoursesDic(from courses: [CoursePreview]) {
-        courses.forEach { [weak self] in
-            self?.action(.fetchCourse($0.id))
-            self?.action(.fetchLecturesList($0.id))
+        courses.forEach { course in
+            Task {
+                action(.fetchCourse(course.id))
+                action(.fetchLecturesList(course.id))
+            }
+        }
+    }
+    
+    @MainActor
+    func updateFreeCourseData(offset: Int, courses: [CoursePreview]) {
+        withAnimation {
+            state.freeCoursesDic[offset] = courses
+            state.freeCourses = buildCoursesList(from: state.freeCoursesDic)
         }
     }
     
@@ -69,24 +82,19 @@ final class HomeViewModel: ViewModel {
                 Task {
                     let courses = await homeUseCase.fetchCourseList(query: 
                             .init(offset: offset,
-                                  count: 10, 
+                                  count: FETCH_COUNT_PER_CALL, 
                                   filterIsRecommended: nil, 
                                   filterIsFree: true,
                                   filterConditions: [])
                     ).courses
-                    
-                    Task { @MainActor in
-                        state.freeCoursesDic[offset] = courses
-                        state.freeCourses = buildCoursesList(from: state.freeCoursesDic)
-                    }
-                    
+                    await updateFreeCourseData(offset: offset, courses: courses)
                     buildCoursesDic(from: courses)
                 }
             case .fetchRecommendedCoursesList(let offset):
                 Task {
                     let courses = await homeUseCase.fetchCourseList(query: 
                             .init(offset: offset,
-                                  count: 10, 
+                                  count: FETCH_COUNT_PER_CALL, 
                                   filterIsRecommended: true, 
                                   filterIsFree: nil,
                                   filterConditions: [])
@@ -101,7 +109,8 @@ final class HomeViewModel: ViewModel {
                 }
             case .fetchCourse(let id):
                 Task {
-                    let course = await homeUseCase.fetchCourse(query: 
+                    let course = await homeUseCase.fetchCourse(
+                        query: 
                             .init(courseId: id)
                     ).course
                     
@@ -116,7 +125,7 @@ final class HomeViewModel: ViewModel {
                 Task {
                     let lectures = await homeUseCase.fetchLectureList(query: 
                             .init(offset: 0, 
-                                  count: 10,
+                                  count: FETCH_COUNT_PER_CALL,
                                   courseId: id
                                  )
                     ).lectures
@@ -128,6 +137,19 @@ final class HomeViewModel: ViewModel {
                         }
                     }
                 }                
+            case .registerCourse(let id):
+                if registeredCourses.contains(where: { $0.id == id }) {
+                    registeredCourses.removeAll { 
+                        $0.id == id
+                    }
+                } else {
+                    let course = (state.freeCourses + state.recommendedCourses)
+                        .filter { $0.id == id }
+                        .first
+                    if let course {
+                        registeredCourses.append(course)
+                    } 
+                }
         }
     }
     
