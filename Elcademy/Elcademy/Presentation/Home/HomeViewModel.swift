@@ -41,6 +41,25 @@ final class HomeViewModel: ViewModel {
          state: HomeViewState) {
         self.homeUseCase = homeUseCase
         self.state = state
+        
+        action(.fetchFreeCoursesList(0))
+        action(.fetchRecommendedCoursesList(0))
+    }
+    
+    fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
+        var list: [CoursePreview] = []
+        for i in 0..<dic.count {
+            if let courses = dic[i * 10] {
+                list.append(contentsOf: courses)
+            }
+        }
+        return list
+    }
+    
+    private func buildCoursesDic(from courses: [CoursePreview]) {
+        courses.forEach { [weak self] in
+            self?.action(.fetchCourse($0.id))
+        }
     }
     
     fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
@@ -124,7 +143,7 @@ final class HomeViewModel: ViewModel {
                             state.lecturesDic[id] = lectures
                         }
                     }
-                }
+                }                
         }
     }
     
