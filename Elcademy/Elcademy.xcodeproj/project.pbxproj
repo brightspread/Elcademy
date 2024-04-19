@@ -10,6 +10,7 @@
 		B36423D92BD25AD8001F7DF0 /* ElcademyTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423D82BD25AD8001F7DF0 /* ElcademyTarget.swift */; };
 		B36423DB2BD25AEB001F7DF0 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */; };
 		B36423DD2BD2630D001F7DF0 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423DC2BD2630D001F7DF0 /* Array+.swift */; };
+		B36423DF2BD29E8A001F7DF0 /* CardListSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B36423DE2BD29E8A001F7DF0 /* CardListSectionItem.swift */; };
 		B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */; };
 		B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */; };
 		B38A8E302BD2024100C7A776 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2F2BD2024100C7A776 /* Card.swift */; };
@@ -52,6 +53,7 @@
 		B36423D82BD25AD8001F7DF0 /* ElcademyTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyTarget.swift; sourceTree = "<group>"; };
 		B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		B36423DC2BD2630D001F7DF0 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
+		B36423DE2BD29E8A001F7DF0 /* CardListSectionItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSectionItem.swift; sourceTree = "<group>"; };
 		B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSection.swift; sourceTree = "<group>"; };
 		B38A8E2F2BD2024100C7A776 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -102,6 +104,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B36423E02BD29E95001F7DF0 /* Queries */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA712BCFEB540049ECFD /* CourseListQuery.swift */,
+				B3A7CA872BD161BB0049ECFD /* CourseQuery.swift */,
+				B3A7CA892BD162050049ECFD /* LectureListQuery.swift */,
+			);
+			path = Queries;
+			sourceTree = "<group>";
+		};
+		B36423E12BD29EA0001F7DF0 /* Reponses */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA6F2BCFE9910049ECFD /* CoursesListResponse.swift */,
+				B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */,
+				B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */,
+			);
+			path = Reponses;
+			sourceTree = "<group>";
+		};
+		B36423E22BD29EA9001F7DF0 /* ViewEntities */ = {
+			isa = PBXGroup;
+			children = (
+				B36423DE2BD29E8A001F7DF0 /* CardListSectionItem.swift */,
+			);
+			path = ViewEntities;
+			sourceTree = "<group>";
+		};
 		B38A8E362BD2455F00C7A776 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,12 +288,9 @@
 		B3A7CA612BCFE7480049ECFD /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA6F2BCFE9910049ECFD /* CoursesListResponse.swift */,
-				B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */,
-				B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */,
-				B3A7CA712BCFEB540049ECFD /* CourseListQuery.swift */,
-				B3A7CA872BD161BB0049ECFD /* CourseQuery.swift */,
-				B3A7CA892BD162050049ECFD /* LectureListQuery.swift */,
+				B36423E22BD29EA9001F7DF0 /* ViewEntities */,
+				B36423E12BD29EA0001F7DF0 /* Reponses */,
+				B36423E02BD29E95001F7DF0 /* Queries */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -449,6 +476,7 @@
 				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
 				B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */,
 				B3A7CA602BCFE6040049ECFD /* AppFlowCoordinator.swift in Sources */,
+				B36423DF2BD29E8A001F7DF0 /* CardListSectionItem.swift in Sources */,
 				B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

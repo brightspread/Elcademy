@@ -14,6 +14,18 @@ struct CourseListQuery: Equatable {
     let filterIsFree: Bool?
     let filterConditions: [String]?
     
+    init(offset: Int? = nil, 
+         count: Int? = nil,
+         filterIsRecommended: Bool? = nil,
+         filterIsFree: Bool? = nil,
+         filterConditions: [String]? = nil) {
+        self.offset = offset
+        self.count = count
+        self.filterIsRecommended = filterIsRecommended
+        self.filterIsFree = filterIsFree
+        self.filterConditions = filterConditions
+    }
+    
     func toQuery() -> [String: Any] {
         
         var query: [String: Any] = [:]

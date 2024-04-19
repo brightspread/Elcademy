@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+
 struct HomeView: View {
     @StateObject var viewModel: HomeViewModel
 
@@ -15,47 +17,17 @@ struct HomeView: View {
             ScrollView {
                 VStack(spacing: 0) {
                     TopLogoSection()
-                    // FreeCoursesSection
+
                     CardListSection(
-                        sectionTitle: "무료 과목", 
-                        courses: viewModel.state.freeCourses,
-                        courseDetails: viewModel.state.coursesDic, 
-                        lectures: viewModel.state.lecturesDic,
-                        moreCardAction: {
-                            viewModel.action(.fetchFreeCoursesList($0))
-                        },
-                        registerAction: {
-                            viewModel.action(.registerCourse($0))
-                        }, 
-                        makeCourseDetailView: viewModel.makeCourseDetailView
+                        cardListItem: viewModel.buildFreeCoursesSectionItem()
                     )
                     
                     CardListSection(
-                        sectionTitle: "추천 과목", 
-                        courses: viewModel.state.recommendedCourses,
-                        courseDetails: viewModel.state.coursesDic,
-                        lectures: viewModel.state.lecturesDic,
-                        moreCardAction: {
-                            viewModel.action(.fetchRecommendedCoursesList($0))
-                        },
-                        registerAction: {
-                            viewModel.action(.registerCourse($0))
-                        },
-                        makeCourseDetailView: viewModel.makeCourseDetailView
+                        cardListItem: viewModel.buildRecommendedCoursesSectionItem()
                     )
                     
-                    
                     CardListSection(
-                        sectionTitle: "내 학습", 
-                        courses: viewModel.registeredCourses,
-                        courseDetails: viewModel.state.coursesDic,
-                        lectures: viewModel.state.lecturesDic, 
-                        moreCardAction: nil,
-                        registerAction: {
-                            viewModel.action(.registerCourse($0))
-                        },
-                        makeCourseDetailView: viewModel.makeCourseDetailView
-                        
+                        cardListItem: viewModel.buildRegisteredCoursesSectionItem()
                     )                
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -64,9 +36,13 @@ struct HomeView: View {
 
         }
         .task {
-            viewModel.action(.fetchFreeCoursesList(0))
-            viewModel.action(.fetchRecommendedCoursesList(0))
+            initializeCourses()
         }
+    }
+    
+    private func initializeCourses() {
+        viewModel.action(.fetchFreeCoursesList(0))
+        viewModel.action(.fetchRecommendedCoursesList(0))
     }
 }
 

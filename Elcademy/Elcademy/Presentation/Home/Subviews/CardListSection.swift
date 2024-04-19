@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct CardListSection: View {
-    @State var sectionTitle: String
+    
+    let cardListItem: CardListSectionItem
     
     @State private var scrollPosition: CGPoint = .zero
     @State private var scrollIndex: Int = 0
     
-    let courses: [CoursePreview]
-    let courseDetails: [Int : Course]
-    let lectures: [Int : [Lecture]]
-    let moreCardAction: ((Int) -> Void)?
-    let registerAction: (Int) -> ()
-    let makeCourseDetailView: CourseDetailViewType
-    
     private let INDEX_MORE_CARD_ACTION = 3
     
     var body: some View {
+        let sectionTitle = cardListItem.title
+        let courses = cardListItem.courses
+        let courseDetails = cardListItem.courseDetails
+        let lectures = cardListItem.lectures
+        let registerAction = cardListItem.registerAction
+        let makeCourseDetailView = cardListItem.makeCourseDetailView
+        let moreCardAction = cardListItem.moreCardAction
+        
         VStack(alignment: .leading, spacing: 0) {
             Text(sectionTitle)
                 .font(.system(size: 16).bold())
