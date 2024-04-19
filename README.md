@@ -31,7 +31,7 @@
 
 ### Layers
 - Domain Layer = Entities + Use Cases + Repositories Interfaces
-- Data Repositories Layer = Repositories Implementations + API (Network) + Persistence DB (AppStorage)
+- Data Repositories Layer = Repositories Implementations + Network + (AppStorage)
 - Presentation Layer (MVVM) = ViewModels + Views
 
 ### Dependency Direction
