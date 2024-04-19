@@ -38,6 +38,8 @@ final class HomeViewModel: ViewModel {
     
     let makeCourseDetailView: CourseDetailViewType
     
+    private let FETCH_COUNT_PER_CALL = 10
+    
     init(homeUseCase: HomeUseCaseProtocol,
          state: HomeViewState,
          makeCourseDetailView: @escaping CourseDetailViewType
@@ -50,7 +52,7 @@ final class HomeViewModel: ViewModel {
     fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
         var list: [CoursePreview] = []
         for i in 0..<dic.count {
-            if let courses = dic[i * 10] {
+            if let courses = dic[i * FETCH_COUNT_PER_CALL] {
                 list.append(contentsOf: courses)
             }
         }
@@ -58,9 +60,19 @@ final class HomeViewModel: ViewModel {
     }
     
     private func buildCoursesDic(from courses: [CoursePreview]) {
-        courses.forEach { [weak self] in
-            self?.action(.fetchCourse($0.id))
-            self?.action(.fetchLecturesList($0.id))
+        courses.forEach { course in
+            Task {
+                action(.fetchCourse(course.id))
+                action(.fetchLecturesList(course.id))
+            }
+        }
+    }
+    
+    @MainActor
+    func updateFreeCourseData(offset: Int, courses: [CoursePreview]) {
+        withAnimation {
+            state.freeCoursesDic[offset] = courses
+            state.freeCourses = buildCoursesList(from: state.freeCoursesDic)
         }
     }
     
@@ -70,24 +82,19 @@ final class HomeViewModel: ViewModel {
                 Task {
                     let courses = await homeUseCase.fetchCourseList(query: 
                             .init(offset: offset,
-                                  count: 10, 
+                                  count: FETCH_COUNT_PER_CALL, 
                                   filterIsRecommended: nil, 
                                   filterIsFree: true,
                                   filterConditions: [])
                     ).courses
-                    
-                    Task { @MainActor in
-                        state.freeCoursesDic[offset] = courses
-                        state.freeCourses = buildCoursesList(from: state.freeCoursesDic)
-                    }
-                    
+                    await updateFreeCourseData(offset: offset, courses: courses)
                     buildCoursesDic(from: courses)
                 }
             case .fetchRecommendedCoursesList(let offset):
                 Task {
                     let courses = await homeUseCase.fetchCourseList(query: 
                             .init(offset: offset,
-                                  count: 10, 
+                                  count: FETCH_COUNT_PER_CALL, 
                                   filterIsRecommended: true, 
                                   filterIsFree: nil,
                                   filterConditions: [])
@@ -118,7 +125,7 @@ final class HomeViewModel: ViewModel {
                 Task {
                     let lectures = await homeUseCase.fetchLectureList(query: 
                             .init(offset: 0, 
-                                  count: 10,
+                                  count: FETCH_COUNT_PER_CALL,
                                   courseId: id
                                  )
                     ).lectures

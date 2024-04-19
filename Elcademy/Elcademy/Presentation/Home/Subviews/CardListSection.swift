@@ -35,9 +35,10 @@ struct CardListSection: View {
                             if let courseDetail = courseDetails[course.id] {
                                 makeCourseDetailView(
                                     courseDetail,
-                                    lectures[course.id]) { 
-                                        registerAction(course.id)
-                                    }
+                                    lectures[course.id]
+                                ) { 
+                                    registerAction(course.id)
+                                }
                             }
                         } label: {
                             Card(course: course)

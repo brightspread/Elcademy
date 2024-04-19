@@ -13,7 +13,6 @@
 		B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */; };
 		B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */; };
 		B38A8E302BD2024100C7A776 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2F2BD2024100C7A776 /* Card.swift */; };
-		B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */; };
 		B38A8E352BD2436F00C7A776 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B38A8E342BD2436F00C7A776 /* MarkdownUI */; };
 		B38A8E392BD2458A00C7A776 /* CourseTopSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */; };
 		B38A8E3B2BD245DE00C7A776 /* CourseDescriptionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */; };
@@ -56,7 +55,6 @@
 		B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
 		B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSection.swift; sourceTree = "<group>"; };
 		B38A8E2F2BD2024100C7A776 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		B38A8E382BD2458A00C7A776 /* CourseTopSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseTopSection.swift; sourceTree = "<group>"; };
 		B38A8E3A2BD245DE00C7A776 /* CourseDescriptionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDescriptionSection.swift; sourceTree = "<group>"; };
 		B38A8E3C2BD24BDB00C7A776 /* CourseLecturesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseLecturesSection.swift; sourceTree = "<group>"; };
@@ -133,13 +131,13 @@
 		B3A7CA332BCFC5160049ECFD /* Elcademy */ = {
 			isa = PBXGroup;
 			children = (
-				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA472BCFC5AE0049ECFD /* Application */,
 				B3A7CA4E2BCFE30B0049ECFD /* Domain */,
 				B3A7CA4D2BCFE3050049ECFD /* Data */,
 				B3A7CA4C2BCFE3000049ECFD /* Infrastructure */,
-				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
 				B3A7CA4A2BCFC5C00049ECFD /* Presentation */,
+				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
+				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA3A2BCFC5170049ECFD /* Preview Content */,
 			);
 			path = Elcademy;
@@ -205,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA652BCFE7830049ECFD /* Repositories */,
-				B3A7CA672BCFE7940049ECFD /* PersistentStorages */,
 				B3A7CA662BCFE78C0049ECFD /* Network */,
 			);
 			path = Data;
@@ -237,7 +234,6 @@
 			children = (
 				B38A8E362BD2455F00C7A776 /* Subviews */,
 				B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */,
-				B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */,
 			);
 			path = CourseDetail;
 			sourceTree = "<group>";
@@ -312,13 +308,6 @@
 				B36423DA2BD25AEB001F7DF0 /* NetworkError.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		B3A7CA672BCFE7940049ECFD /* PersistentStorages */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersistentStorages;
 			sourceTree = "<group>";
 		};
 		B3A7CA842BD09B880049ECFD /* Utils */ = {
@@ -451,7 +440,6 @@
 				B3A7CA862BD09B9F0049ECFD /* ViewModel.swift in Sources */,
 				B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */,
 				B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */,
-				B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */,
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
 				B38A8E3D2BD24BDB00C7A776 /* CourseLecturesSection.swift in Sources */,
 				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
