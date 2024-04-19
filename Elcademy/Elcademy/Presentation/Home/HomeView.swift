@@ -22,7 +22,8 @@ struct HomeView: View {
                         moreCardAction: {
                             viewModel.action(.fetchFreeCoursesList($0))
                         },
-                        courseDetails: viewModel.state.coursesDic
+                        courseDetails: viewModel.state.coursesDic, 
+                        lectures: viewModel.state.lecturesDic
                     )
                     
                     CardListSection(
@@ -31,8 +32,9 @@ struct HomeView: View {
                         moreCardAction: {
                             viewModel.action(.fetchRecommendedCoursesList($0))
                         },
-                        courseDetails: viewModel.state.coursesDic
-                        )
+                        courseDetails: viewModel.state.coursesDic,
+                        lectures: viewModel.state.lecturesDic
+                    )
 
                     // MyLecturesSection
     //                CardCourseSection(sectionTitle: "무료 과목", 
@@ -43,6 +45,10 @@ struct HomeView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
 
+        }
+        .task {
+            viewModel.action(.fetchFreeCoursesList(0))
+            viewModel.action(.fetchRecommendedCoursesList(0))
         }
     }
 }
