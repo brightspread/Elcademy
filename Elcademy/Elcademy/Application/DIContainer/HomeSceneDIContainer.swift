@@ -36,7 +36,7 @@ final class HomeSceneDIContainer: HomeFlowCoordinatorDependencies {
         )
     }
     
-    func makeCourseDetailView() -> CourseDetailView {
-        CourseDetailView()
+    func makeCourseDetailView(with course: Course) -> CourseDetailView {
+        CourseDetailView(course: course)
     }
 }

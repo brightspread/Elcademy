@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeFlowCoordinatorDependencies {
     func makeHomeView() -> HomeView
-    func makeCourseDetailView() -> CourseDetailView
+    func makeCourseDetailView(with course: Course) -> CourseDetailView
 }
 
 final class HomeFlowCoordinator {

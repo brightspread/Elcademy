@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */; };
+		B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */; };
+		B38A8E302BD2024100C7A776 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E2F2BD2024100C7A776 /* Card.swift */; };
+		B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */; };
+		B38A8E352BD2436F00C7A776 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = B38A8E342BD2436F00C7A776 /* MarkdownUI */; };
 		B3A7CA352BCFC5160049ECFD /* ElcademyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */; };
 		B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA362BCFC5160049ECFD /* ContentView.swift */; };
 		B3A7CA392BCFC5170049ECFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3A7CA382BCFC5170049ECFD /* Assets.xcassets */; };
@@ -38,9 +43,14 @@
 		B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA892BD162050049ECFD /* LectureListQuery.swift */; };
 		B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */; };
 		B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */; };
+		B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+.swift"; sourceTree = "<group>"; };
+		B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListSection.swift; sourceTree = "<group>"; };
+		B38A8E2F2BD2024100C7A776 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDetailViewModel.swift; sourceTree = "<group>"; };
 		B3A7CA312BCFC5160049ECFD /* Elcademy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Elcademy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3A7CA342BCFC5160049ECFD /* ElcademyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElcademyApp.swift; sourceTree = "<group>"; };
 		B3A7CA362BCFC5160049ECFD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -70,6 +80,7 @@
 		B3A7CA892BD162050049ECFD /* LectureListQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureListQuery.swift; sourceTree = "<group>"; };
 		B3A7CA8B2BD163F10049ECFD /* LecturesListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LecturesListResponse.swift; sourceTree = "<group>"; };
 		B3A7CA8D2BD169FA0049ECFD /* CourseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseResponse.swift; sourceTree = "<group>"; };
+		B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopLogoSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +91,7 @@
 				B3A7CA6C2BCFE8160049ECFD /* Moya in Frameworks */,
 				B3A7CA792BCFEEF70049ECFD /* Then in Frameworks */,
 				B3A7CA6A2BCFE8160049ECFD /* CombineMoya in Frameworks */,
+				B38A8E352BD2436F00C7A776 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +117,7 @@
 		B3A7CA332BCFC5160049ECFD /* Elcademy */ = {
 			isa = PBXGroup;
 			children = (
+				B3A7CA8F2BD16F130049ECFD /* Resources */,
 				B3A7CA472BCFC5AE0049ECFD /* Application */,
 				B3A7CA4E2BCFE30B0049ECFD /* Domain */,
 				B3A7CA4D2BCFE3050049ECFD /* Data */,
@@ -112,9 +125,7 @@
 				B3A7CA4B2BCFE2FA0049ECFD /* Common */,
 				B3A7CA4A2BCFC5C00049ECFD /* Presentation */,
 				B3A7CA362BCFC5160049ECFD /* ContentView.swift */,
-				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
 				B3A7CA3D2BCFC5170049ECFD /* Persistence.swift */,
-				B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */,
 				B3A7CA3A2BCFC5170049ECFD /* Preview Content */,
 			);
 			path = Elcademy;
@@ -161,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA7C2BCFF1480049ECFD /* Then+.swift */,
+				B38A8E2B2BD1FA5D00C7A776 /* Color+.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -196,6 +208,7 @@
 		B3A7CA532BCFE3CF0049ECFD /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B3A7CA902BD171230049ECFD /* Subviews */,
 				B3A7CA552BCFE41E0049ECFD /* Flows */,
 				B3A7CA542BCFE3FF0049ECFD /* CourseDetail */,
 				B3A7CA582BCFE4830049ECFD /* HomeView.swift */,
@@ -208,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				B3A7CA5A2BCFE49B0049ECFD /* CourseDetailView.swift */,
+				B38A8E312BD23ADE00C7A776 /* CourseDetailViewModel.swift */,
 			);
 			path = CourseDetail;
 			sourceTree = "<group>";
@@ -297,6 +311,25 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B3A7CA8F2BD16F130049ECFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA382BCFC5170049ECFD /* Assets.xcassets */,
+				B3A7CA3F2BCFC5170049ECFD /* Elcademy.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B3A7CA902BD171230049ECFD /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				B3A7CA912BD1712B0049ECFD /* TopLogoSection.swift */,
+				B38A8E2D2BD1FBE900C7A776 /* CardListSection.swift */,
+				B38A8E2F2BD2024100C7A776 /* Card.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +350,7 @@
 				B3A7CA692BCFE8160049ECFD /* CombineMoya */,
 				B3A7CA6B2BCFE8160049ECFD /* Moya */,
 				B3A7CA782BCFEEF70049ECFD /* Then */,
+				B38A8E342BD2436F00C7A776 /* MarkdownUI */,
 			);
 			productName = Elcademy;
 			productReference = B3A7CA312BCFC5160049ECFD /* Elcademy.app */;
@@ -349,6 +383,7 @@
 			packageReferences = (
 				B3A7CA682BCFE8160049ECFD /* XCRemoteSwiftPackageReference "Moya" */,
 				B3A7CA772BCFEEF70049ECFD /* XCRemoteSwiftPackageReference "Then" */,
+				B38A8E332BD2436F00C7A776 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = B3A7CA322BCFC5160049ECFD /* Products */;
 			projectDirPath = "";
@@ -386,7 +421,10 @@
 				B3A7CA8E2BD169FA0049ECFD /* CourseResponse.swift in Sources */,
 				B3A7CA412BCFC5170049ECFD /* Elcademy.xcdatamodeld in Sources */,
 				B3A7CA5B2BCFE49B0049ECFD /* CourseDetailView.swift in Sources */,
+				B38A8E2E2BD1FBE900C7A776 /* CardListSection.swift in Sources */,
+				B38A8E2C2BD1FA5D00C7A776 /* Color+.swift in Sources */,
 				B3A7CA7D2BCFF1480049ECFD /* Then+.swift in Sources */,
+				B38A8E302BD2024100C7A776 /* Card.swift in Sources */,
 				B3A7CA742BCFEBCD0049ECFD /* CoursesRepository.swift in Sources */,
 				B3A7CA502BCFE3320049ECFD /* AppDIContainer.swift in Sources */,
 				B3A7CA6E2BCFE8860049ECFD /* CoursesRepositoryProtocol.swift in Sources */,
@@ -394,9 +432,11 @@
 				B3A7CA862BD09B9F0049ECFD /* ViewModel.swift in Sources */,
 				B3A7CA8A2BD162050049ECFD /* LectureListQuery.swift in Sources */,
 				B3A7CA8C2BD163F10049ECFD /* LecturesListResponse.swift in Sources */,
+				B38A8E322BD23ADE00C7A776 /* CourseDetailViewModel.swift in Sources */,
 				B3A7CA812BD0986F0049ECFD /* HomeUseCase.swift in Sources */,
 				B3A7CA722BCFEB540049ECFD /* CourseListQuery.swift in Sources */,
 				B3A7CA832BD09B6D0049ECFD /* HomeViewModel.swift in Sources */,
+				B3A7CA922BD1712B0049ECFD /* TopLogoSection.swift in Sources */,
 				B3A7CA592BCFE4830049ECFD /* HomeView.swift in Sources */,
 				B3A7CA372BCFC5160049ECFD /* ContentView.swift in Sources */,
 				B3A7CA882BD161BB0049ECFD /* CourseQuery.swift in Sources */,
@@ -609,6 +649,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B38A8E332BD2436F00C7A776 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.0;
+			};
+		};
 		B3A7CA682BCFE8160049ECFD /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -628,6 +676,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B38A8E342BD2436F00C7A776 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B38A8E332BD2436F00C7A776 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			productName = MarkdownUI;
+		};
 		B3A7CA692BCFE8160049ECFD /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B3A7CA682BCFE8160049ECFD /* XCRemoteSwiftPackageReference "Moya" */;

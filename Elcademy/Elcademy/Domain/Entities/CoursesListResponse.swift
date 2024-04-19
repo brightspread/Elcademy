@@ -28,12 +28,13 @@ struct CoursesListResponse: Codable {
 //isRecommended
 
 // MARK: - CoursePreview
-struct CoursePreview: Codable {
+struct CoursePreview: Codable, Hashable {
     let id: Int
     let isRecommended: Bool
     let title, code, shortDescription: String
+    let description: String?
     let taglist: [String]
-    let logoFileURL: String
+    let logoFileURL: String?
     let imageFileURL: String?
     let isFree: Bool
     let tags: [Tag]
@@ -41,7 +42,7 @@ struct CoursePreview: Codable {
     enum CodingKeys: String, CodingKey {
         case id
         case isRecommended = "is_recommended"
-        case title, code
+        case title, code, description
         case shortDescription = "short_description"
         case taglist
         case logoFileURL = "logo_file_url"
@@ -57,7 +58,7 @@ struct CourseResult: Codable {
 }
 
 // MARK: - Tag
-struct Tag: Codable {
+struct Tag: Codable, Hashable {
     let id, tagType: Int
     let name: String
 
