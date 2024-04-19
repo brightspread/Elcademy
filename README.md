@@ -24,6 +24,16 @@
 - To keep the View code clean, I extracted most of the elements to the **Subview**.
 - I split it into main and feat branches and used squash merges.
 
+## Architecture
+![CleanArchitecture+MVVM](https://github.com/brightspread/Elcademy/assets/59555700/7798b6d7-6939-4342-a918-edf820ee3df3)
+
+### Layers
+- Domain Layer = Entities + Use Cases + Repositories Interfaces
+- Data Repositories Layer = Repositories Implementations + API (Network) + Persistence DB (AppStorage)
+- Presentation Layer (MVVM) = ViewModels + Views
+
+### Dependency Direction
+![CleanArchitectureDependencies](https://github.com/brightspread/Elcademy/assets/59555700/c3f53407-ebe5-4252-aeec-9b03892f12e1)
 
 ### Dependencies
 - Combine
