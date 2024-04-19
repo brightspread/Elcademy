@@ -93,6 +93,8 @@ final class HomeViewModel: ViewModel {
                         state.recommendedCoursesDic[offset] = courses
                         state.recommendedCourses = buildCoursesList(from: state.recommendedCoursesDic)
                     }
+                    
+                    buildCoursesDic(from: courses)
                 }
             case .fetchCourse(let id):
                 Task {
