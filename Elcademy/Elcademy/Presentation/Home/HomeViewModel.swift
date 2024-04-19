@@ -59,22 +59,6 @@ final class HomeViewModel: ViewModel {
     private func buildCoursesDic(from courses: [CoursePreview]) {
         courses.forEach { [weak self] in
             self?.action(.fetchCourse($0.id))
-        }
-    }
-    
-    fileprivate func buildCoursesList(from dic: [Int : [CoursePreview]]) -> [CoursePreview] {
-        var list: [CoursePreview] = []
-        for i in 0..<dic.count {
-            if let courses = dic[i * 10] {
-                list.append(contentsOf: courses)
-            }
-        }
-        return list
-    }
-    
-    private func buildCoursesDic(from courses: [CoursePreview]) {
-        courses.forEach { [weak self] in
-            self?.action(.fetchCourse($0.id))
             self?.action(.fetchLecturesList($0.id))
         }
     }
