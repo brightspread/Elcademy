@@ -19,11 +19,11 @@ final class HomeSceneDIContainer: HomeFlowCoordinatorDependencies {
         self.dependencies = dependencies
     }
     
-    func makeHomeUseCase() -> HomeUseCaseProtocol {
+    private func makeHomeUseCase() -> HomeUseCaseProtocol {
         HomeUseCase(coursesRepository: makeCoursesRepository())
     }
     
-    func makeCoursesRepository() -> CoursesRepository {
+    private func makeCoursesRepository() -> CoursesRepository {
         CoursesRepository(dataTransferService: dependencies.apiDataTransferService)
     }
     

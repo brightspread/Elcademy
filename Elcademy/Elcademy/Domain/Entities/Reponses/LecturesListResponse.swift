@@ -7,7 +7,6 @@
 
 import Foundation
 
-// MARK: - LecturesPage
 struct LecturesListResponse: Codable {
     let result: LectureResult
     let lectures: [Lecture]
@@ -20,7 +19,6 @@ struct LecturesListResponse: Codable {
     }
 }
 
-// MARK: - Lecture
 struct Lecture: Codable, Hashable {
     let id: Int
     let title, description: String
@@ -31,7 +29,6 @@ struct Lecture: Codable, Hashable {
     }
 }
 
-// MARK: - Result
 struct LectureResult: Codable {
     let status: String
 }

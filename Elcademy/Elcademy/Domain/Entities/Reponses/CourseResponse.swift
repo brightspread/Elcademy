@@ -35,7 +35,6 @@ struct Course: Codable {
     }
 }
 
-// MARK: - Result
 struct CourseResponseResult: Codable {
     let status: String
 }

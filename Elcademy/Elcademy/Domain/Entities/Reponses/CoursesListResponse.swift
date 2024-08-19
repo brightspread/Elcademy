@@ -6,7 +6,7 @@
 //
 
 import Foundation
-// MARK: - CoursesPage
+
 struct CoursesListResponse: Codable {
     let result: CourseResult
     let courses: [CoursePreview]
@@ -19,15 +19,6 @@ struct CoursesListResponse: Codable {
     }
 }
 
-//imageFileUrl  // 없으면 logo
-//logo_file_url 
-//title // 최대 두줄
-//shortDescription //최대 두줄
-//taglist // 최대 두줄
-//isFree
-//isRecommended
-
-// MARK: - CoursePreview
 struct CoursePreview: Codable, Hashable {
     let id: Int
     let isRecommended: Bool
@@ -82,12 +73,10 @@ struct CoursePreview: Codable, Hashable {
     }
 }
 
-// MARK: - Result
 struct CourseResult: Codable {
     let status: String
 }
 
-// MARK: - Tag
 struct Tag: Codable, Hashable {
     let id, tagType: Int
     let name: String
